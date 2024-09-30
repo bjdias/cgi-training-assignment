@@ -15,14 +15,14 @@ import org.springframework.web.bind.annotation.RestController;
 import com.collection.Products;
 import com.service.ProductService;
 
-@RequestMapping("product")
+@RequestMapping("productservice")
 @RestController
 public class ProductController {
 
 	@Autowired
 	ProductService productService;
 	
-	@PostMapping(value = "store",consumes = MediaType.APPLICATION_JSON_VALUE)
+	@PostMapping(value = "create",consumes = MediaType.APPLICATION_JSON_VALUE)
 	public String storeProduct(@RequestBody Products product) {
 		return productService.storeProduct(product);
 	}
