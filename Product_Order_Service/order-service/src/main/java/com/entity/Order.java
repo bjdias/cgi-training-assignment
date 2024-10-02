@@ -1,5 +1,6 @@
 package com.entity;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 import jakarta.annotation.Generated;
@@ -8,7 +9,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
-@Entity
+@Entity(name ="orders")
 public class Order {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -16,7 +17,7 @@ public class Order {
 	private int userId;
 	private int productId;
 	private int quantity;
-	private Date orderDate;
+	private LocalDate orderDate = LocalDate.now();
 
 	public int getOrderId() {
 		return oid;
@@ -50,12 +51,20 @@ public class Order {
 		this.quantity = quantity;
 	}
 
-	public Date getOrderDate() {
+	public LocalDate getOrderDate() {
 		return orderDate;
 	}
 
-	public void setOrderDate(Date orderDate) {
+	public void setOrderDate(LocalDate orderDate) {
 		this.orderDate = orderDate;
+	}
+
+	public int getOid() {
+		return oid;
+	}
+
+	public void setOid(int oid) {
+		this.oid = oid;
 	}
 
 }

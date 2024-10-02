@@ -11,9 +11,9 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.web.client.RestTemplate;
 
 @SpringBootApplication(scanBasePackages = "com")
-@EnableDiscoveryClient
-@EnableJpaRepositories("com.repo")
 @EntityScan(basePackages = "com.entity")
+@EnableJpaRepositories("com.repo")
+@EnableDiscoveryClient
 @EnableFeignClients
 public class OrderServiceApplication {
 
